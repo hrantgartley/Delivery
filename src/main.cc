@@ -25,7 +25,7 @@ int main() {
     Receipt receipt(FirstName,
                     LastName,
                     std::chrono::system_clock::now(),
-                    std::chrono::system_clock::now(),
+                    std::chrono::system_clock::now() - std::chrono::minutes(10),
                     1,
                     Quantity,
                     Quantity * 1.838,

@@ -33,7 +33,7 @@ Receipt::Receipt(std::string first,
     Quantity = quantity;
     Total = total;
     TaxAmount = .08;
-    CashBack = cashBack; 
+    CashBack = cashBack;
 }
 
 std::chrono::system_clock::time_point Receipt::CalculateOrderTime() {
@@ -80,7 +80,6 @@ std::ostream& operator<<(std::ostream& os, const std::chrono::system_clock::time
     os << buffer;
     return os;
 }
-
 
 std::string Receipt::ReturnOrderInfo() {
     std::string OrderInfo{};
@@ -134,4 +133,10 @@ std::string Receipt::ReturnPaymentInfo() {
     PaymentInfo = "OrderNumber: " + std::to_string(OrderNumber) + "\nQuantity: " + std::to_string(Quantity) + "\nTotal: " +
                   std::to_string(Total) + " " + std::to_string(TaxAmount);
     return PaymentInfo;
+}
+
+std::string Receipt::GetCustomerInformation() const {
+    std::string F = First;
+    std::string L = Last;
+    return F + " " + L;
 }

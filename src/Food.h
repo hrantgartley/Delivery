@@ -22,6 +22,7 @@ class Receipt {
         std::chrono::system_clock::time_point CalculateDeliveryTime();
         float CalculateTotal();
         void PrintReceipt();
+        std::string GetCustomerInformation() const;
         friend std::ostream& operator<<(std::ostream& os, const std::chrono::system_clock::time_point& time);
         int GenerateOrderNumber();
         std::string ReturnCustomerInfo();
